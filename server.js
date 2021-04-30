@@ -12,7 +12,7 @@ const PORT = 5001;
 
 
 app.get("/", (req, res)=>{
-	res.send('Hello lovely people of Armenia!!');
+	res.send('Hello Armenia!! Hello lovely people!!');
 })
 
 
