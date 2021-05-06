@@ -5,20 +5,20 @@ const app = express();
 const PORT = 5001;
 
 
-//Middleware
-//app.set('view engine', 'ejs');
+// Middleware
+app.set('view engine', 'ejs');
 //app.use(express.json());
 //app.use(cookieParser());
 
 
 app.get("/", (req, res)=>{
-	res.send('Hello world!! Hello Armenia!!!! Hello lovely people!!!!!!');
+	res.render('index');
 })
 
 
-//app.get('/login', (req, res)=>{
-	//res.render('login')
-//})
+app.get('/login', (req, res)=>{
+	res.render('login')
+})
 
 //app.post('/login', (req, res)=>{
 	//let token = req.body.token;
