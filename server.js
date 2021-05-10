@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const cookieParser = require('cookie-parser');
 
+app.use(express.static("public"));
+
 //Google Auth
 const {OAuth2Client} = require('google-auth-library');
-const CLIENT_ID = '766622694795-iv0d9qnj0l8md1sca2aalk2fn0uvs7v5.apps.googleusercontent.com'
+const CLIENT_ID = '766622694795-iv0d9qnj0l8md1sca2aalk2fn0uvs7v5.apps.googleusercontent.com';
 const client = new OAuth2Client(CLIENT_ID);
 
 
@@ -61,7 +63,7 @@ app.get('/protectedroute', (req, res)=>{
 
 app.get('/logout', (req, res)=>{
 	res.claerCookie('session-token');
-	res.redirect('/login')
+	res.redirect('/login');
 })
 
 
@@ -86,7 +88,7 @@ function checkAuthenticated(req, res, next){
           next();
       })
       .catch(err=>{
-          res.redirect('/login')
+          res.redirect('/login');
       })
 
 }
@@ -96,4 +98,17 @@ function checkAuthenticated(req, res, next){
 app.listen(PORT, () =>{
 	console.log(`Server running on port ${PORT}`);
 	//console.log("Server Started on:" + PORT)
+})
+
+
+app.get("/admin", (req, res) => {
+	res.render("admin");
+})
+
+app.get("/edit_book", (req, res) => {
+	res.render("edit_book");
+})
+
+app.get("/edit_dance", (req, res) => {
+	res.render("edit_dance");
 })
