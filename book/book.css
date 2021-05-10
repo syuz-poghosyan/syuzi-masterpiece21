@@ -1,0 +1,181 @@
+.Mydiv {
+background-color: white;
+border-radius: 10px;
+border: 2px solid grey;
+margin-top: 25px;
+margin-bottom: 5px;
+margin-left: 500px;
+margin-right: 500px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 5px;
+
+}
+
+.Mydivdate{
+float: left;
+color: #70757a;
+
+}
+.Mydivrow{
+display: table-row
+
+}
+.Mydivcell{
+width: 60px; display: table-cell;
+
+}
+
+#fullnameerror {
+  color: red;
+  font-size: 10px;
+}
+
+
+#otherlangtext2{
+  display: none;
+}
+
+#otherlangtext{
+  display: none;
+}
+
+#othertext{
+  display: none;
+}
+
+input[type=submit] {
+  font-family: Tahoma;
+  background:rgba(150, 6, 150, 0.541);
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+}
+
+#existingData{
+  font-size: 50px;
+  text-align: center;
+  color: rgb(188, 188, 188);
+}
+
+
+div.item {
+  min-width: 200px;
+  min-height: 200px;
+  width: 15%;
+  height: 650px;
+  background-color: #b6b6b6;
+  float: left;
+  margin: 15px;
+  padding: 20px;
+  position: relative;
+  border: 100px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+
+span.item {
+  line-height: 16px;
+  font-size: 17px;
+}
+
+span.undefined {
+  color: red;
+}
+
+div.item button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: rgb(160, 57, 120);
+  padding: 10px 25px;
+  border-color: rgb(56, 5, 37);
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.editButton {
+  bottom: 10px;
+  left: 70px;
+  color: rgb(160, 57, 120);
+  padding: 10px 25px;
+  border-color: rgb(56, 5, 37);
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#bookDataContainer div.item {
+  background-color: rgb(195, 196, 196);
+
+}
+
+#danceDataContainer div.item {
+  background-color: rgb(195, 196, 196) ;
+}
+
+
+h2 {
+ background-color: darkgray;
+ text-align: center; 
+ color: azure; 
+ font-family: fantasy;
+ font-size: 30pt; 
+ }
+
+
+
+.main {
+  margin-top: 30px; 
+} 
+
+textarea{
+  height: auto;
+  border-color: rgb(83, 80, 80);
+  border-width: 3px;
+}
+
+input{
+  border-color: rgb(83, 80, 80);
+  border-width: 3px;
+  margin: 5px;
+}
+
+label{
+  font-size: 20px;
+}
+
+#backButton{
+  bottom: 10px;
+  left: 70px;
+  color: rgb(160, 57, 120);
+  padding: 10px 25px;
+  border-color: rgb(56, 5, 37);
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+#editDance { 
+  position:relative; 
+  display:inline-block; 
+  top:0; 
+  font-weight:normal; 
+  padding:7px 20px; 
+  margin:15px;
+  text-align:center; 
+  cursor:pointer; 
+  background-color:#074069; 
+  border:2px solid #074069; 
+  text-shadow:none; 
+  color:#fff;
+  border-radius:2px;
+}
