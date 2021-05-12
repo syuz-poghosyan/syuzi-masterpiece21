@@ -112,3 +112,11 @@ app.get("/edit_book", (req, res) => {
 app.get("/edit_dance", (req, res) => {
 	res.render("edit_dance");
 })
+
+app.get("/book_form", (req, res) => {
+  res.render("book_form");
+})
+
+app.get("/dance_form", (req, res) => {
+  res.render("dance_form");
+})

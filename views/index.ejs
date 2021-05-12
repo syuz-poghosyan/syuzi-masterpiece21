@@ -16,18 +16,19 @@
 		<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		<a href="#" onclick="signOut();">Sign out</a>
 		
-		<div class="dashboard" style="text-align: center; color: azure; font-family: fantasy;font-size: 100pt">
+		<div class="dashboard" style="text-align: center; color: azure; font-family: fantasy; font-size: 65pt; padding-top: 50px">
 			<label>WELCOME TO SYUZANNA'S DASHBOARD</label><br>
 		</div>
-
-		<div class="linkDiv">
-			<a href="https://cse-120-2021-api-syuzi.herokuapp.com/book/book_form.html">Visit the favourite book survey!!</a>
-		</div>
-		<div class="linkDiv">
-			<a href="https://cse-120-2021-api-syuzi.herokuapp.com/dance/dance_form.html">Visit the favourite hobby survey!!</a>
-		</div>
-		<div class="linkDiv">
-			<a href="https://cse-120-2021-api-syuzi.herokuapp.com/admin/admin.html">Visit the admin page!!</a>
+        <div class="divCenter">
+			<div class="linkDiv">
+				<a href="http://localhost:5001/book_form">Visit the favourite book survey!!</a>
+			</div>
+			<div class="linkDiv">
+				<a href="http://localhost:5001/dance_form">Visit the favourite hobby survey!!</a>
+			</div>
+			<div class="linkDiv">
+				<a href="http://localhost:5001/admin">Visit the admin page to see the results!!</a>
+			</div>
 		</div>
 		<script>
 			function onSignIn(googleUser) {

@@ -4,15 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta name="google-signin-client_id" content="766622694795-iv0d9qnj0l8md1sca2aalk2fn0uvs7v5.apps.googleusercontent.com">
-    <title>Login</title>
+    <link href="/index.css" rel="stylesheet" type="text/css" />
+    <title>Login page</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
-    <h1>Login page!!</h1>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  	<div class="login">
+	    <h1>Please, sign in to continue!</h1>
+	    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-	<a href="#" onclick="signOut();">Sign out</a>
-	
+		<a href="#" onclick="signOut();">Sign out</a>
+    </div>
 	<script>
 		function onSignIn(googleUser) {
 		    var id_token = googleUser.getAuthResponse().id_token;
