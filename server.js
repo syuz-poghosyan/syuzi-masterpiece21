@@ -20,12 +20,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.get("/", (req, res)=>{
+app.get("/", checkAuthenticated, (req, res)=>{
 	res.render('index');
 })
 
 
-app.get('/login', (req, res)=>{
+app.get('/login', checkAuthenticated, (req, res)=>{
 	res.render('login');
 })
 

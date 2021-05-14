@@ -179,13 +179,13 @@ function UpdateData(e){
     dataType : 'json',
     success: function (data) {
       console.log("successfully editted");
+      window.location.href="/admin";
     },
     error: function (xhr) {
       console.error("Error in editting", xhr);
     },
     complete: function () {
       console.log("Complete");  
-      window.location.href="http://localhost:5001/admin";
     }
   });  
 }
@@ -382,13 +382,13 @@ function EditData(e){
     dataType : 'json',
     success: function (data) {
       console.log("successfully editted");
+      window.location.href="/admin";
     },
     error: function (xhr) {
       console.error("Error in editting", xhr);
     },
     complete: function () {
       console.log("Complete");  
-      window.location.href="http://localhost:5001/admin";
     }
   });  
 }
