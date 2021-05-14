@@ -13,7 +13,7 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
 	<body style="background-color: grey">
-		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<div class="g-signin2" data-onsuccess="onSignIn" style="visibility: hidden;"></div>
 		<a href="#" onclick="signOut();">Sign out</a>
 		
 		<div class="dashboard" style="text-align: center; color: azure; font-family: fantasy; font-size: 65pt; padding-top: 50px">
@@ -50,7 +50,7 @@
 				var auth2 = gapi.auth2.getAuthInstance();
 				auth2.signOut().then(function () {
 				  console.log('User signed out.');
-				  location.assign('/login');
+				  location.assign('/');
 				});
 			}
 		</script>

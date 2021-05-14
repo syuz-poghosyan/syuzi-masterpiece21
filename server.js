@@ -21,15 +21,15 @@ app.use(cookieParser());
 
 
 app.get("/", checkAuthenticated, (req, res)=>{
-	res.render('index');
-})
-
-
-app.get('/login', checkAuthenticated, (req, res)=>{
 	res.render('login');
 })
 
-app.post('/login', (req, res)=>{
+
+app.get('/index', checkAuthenticated, (req, res)=>{
+	res.render('index');
+})
+
+app.post('/login', checkAuthenticated, (req, res)=>{
 	let token = req.body.token;
 	console.log(token);
 	async function verify() {
@@ -56,14 +56,14 @@ app.get('/', checkAuthenticated, (req, res)=>{
 })
 
 
-app.get('/protectedroute', (req, res)=>{
+app.get('/protectedroute', checkAuthenticated, (req, res)=>{
 	res.render('protectedroute');
 })
 
 
-app.get('/logout', (req, res)=>{
+app.get('/logout', checkAuthenticated, (req, res)=>{
 	res.claerCookie('session-token');
-	res.redirect('/login');
+	res.redirect('/');
 })
 
 
@@ -88,7 +88,7 @@ function checkAuthenticated(req, res, next){
           next();
       })
       .catch(err=>{
-          res.redirect('/login');
+          res.redirect('/login')
       })
 
 }
@@ -97,26 +97,25 @@ function checkAuthenticated(req, res, next){
 
 app.listen(PORT, () =>{
 	console.log(`Server running on port ${PORT}`);
-	//console.log("Server Started on:" + PORT)
 })
 
 
-app.get("/admin", (req, res) => {
+app.get("/admin", checkAuthenticated, (req, res) => {
 	res.render("admin");
 })
 
-app.get("/edit_book", (req, res) => {
+app.get("/edit_book", checkAuthenticated, (req, res) => {
 	res.render("edit_book");
 })
 
-app.get("/edit_dance", (req, res) => {
+app.get("/edit_dance", checkAuthenticated, (req, res) => {
 	res.render("edit_dance");
 })
 
-app.get("/book_form", (req, res) => {
+app.get("/book_form", checkAuthenticated, (req, res) => {
   res.render("book_form");
 })
 
-app.get("/dance_form", (req, res) => {
+app.get("/dance_form", checkAuthenticated, (req, res) => {
   res.render("dance_form");
 })
