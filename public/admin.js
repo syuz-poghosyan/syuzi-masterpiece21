@@ -185,6 +185,7 @@ function UpdateData(e){
     },
     complete: function () {
       console.log("Complete");  
+      window.location.href="http://localhost:5001/admin";
     }
   });  
 }
@@ -387,6 +388,7 @@ function EditData(e){
     },
     complete: function () {
       console.log("Complete");  
+      window.location.href="http://localhost:5001/admin";
     }
   });  
 }

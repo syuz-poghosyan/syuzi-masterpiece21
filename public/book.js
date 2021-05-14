@@ -1,12 +1,4 @@
-function Validatecurrentvalue(){
-  var currentvalue=document.getElementById("fname").value;
-  console.log("Eventcall;", currentvalue.length)
-  if (currentvalue.length > 10){
-   document.getElementById("fullnameerror").innerHTML="Bad";
-  } else{
-    document.getElementById("fullnameerror").innerHTML="Good";
-  }
-}
+
 
 function handleFullNameChange(){
  Myformdata.fullname=document.getElementById("fname").value;

@@ -179,3 +179,13 @@ label{
   color:#fff;
   border-radius:2px;
 }
+
+
+.backButton {
+  color: rgb(160, 57, 120);
+  padding: 10px 25px;
+  border-color: rgb(56, 5, 37);
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+}
