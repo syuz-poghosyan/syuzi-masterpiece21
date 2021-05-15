@@ -20,16 +20,16 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.get("/", checkAuthenticated, (req, res)=>{
-	res.render('login');
-})
-
-
-app.get('/index', checkAuthenticated, (req, res)=>{
+app.get("/", (req, res)=>{
 	res.render('index');
 })
 
-app.post('/login', checkAuthenticated, (req, res)=>{
+
+app.get('/login', (req, res)=>{
+	res.render('login');
+})
+
+app.post('/login', (req, res)=>{
 	let token = req.body.token;
 	console.log(token);
 	async function verify() {
@@ -45,13 +45,14 @@ verify()
 .then(()=>{
 	res.cookie('session-token', token);
     res.send('success');
-}).
-catch(console.error);
+})
+.catch(console.error);
 })
 
 
-app.get('/', checkAuthenticated, (req, res)=>{
+app.get('/index', checkAuthenticated, (req, res)=>{
 	let user = req.user;
+  console.log(user);
 	res.render('index', {user});
 })
 
@@ -61,18 +62,29 @@ app.get('/protectedroute', checkAuthenticated, (req, res)=>{
 })
 
 
-app.get('/logout', checkAuthenticated, (req, res)=>{
-	res.claerCookie('session-token');
-	res.redirect('/');
+app.get('/logout', (req, res)=>{
+  console.log("Logout");
+	res.clearCookie('session-token');
+  let token = req.cookies['session-token'];
+    console.log("bbbaaa");
+console.log(token);
+console.log("bbbaaa");
+	res.redirect('/login');
 })
 
 
 function checkAuthenticated(req, res, next){
 
     let token = req.cookies['session-token'];
+    if(typeof token == 'undefined'){
+      console.log('User not logged in. Redirecting to login.');
+      res.redirect('/login');
+    }else{
+console.log(token);
 
     let user = {};
     async function verify() {
+
         const ticket = await client.verifyIdToken({
             idToken: token,
             audience: CLIENT_ID,  // Specify the CLIENT_ID of the app that accesses the backend
@@ -88,8 +100,11 @@ function checkAuthenticated(req, res, next){
           next();
       })
       .catch(err=>{
-          res.redirect('/login')
+        console.log(err);
+          res.redirect('/login');
       })
+    }
+    
 
 }
 
